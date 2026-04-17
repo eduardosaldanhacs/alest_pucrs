@@ -66,13 +66,13 @@ public class Main {
         System.out.println("N    |#OP");
 
         //para cada funcao descomente a linha para chamar a funcao desejada
-        for (int n = 0; n <= 100; n+=10) {
+        for (int n = 1; n <= 10; n++) {
             //op = f1(n);
-            //op = f2(n);
+            op = f2(n);
             //op = f3(n);
             //op = f4(n);
             //op = f5(n);
-            op = f6(n);
+            //op = f6(n);
             System.out.println(n + "    |" + op);
         }
     }
