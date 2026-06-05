@@ -20,8 +20,8 @@ public class App {
 
         System.out.println("Trocou " + l.set(2, 35) + " por 35 na posicao 2.");
 
-        //   System.out.println("Removeu 50? " + l.remove(50));
-        //System.out.println("Removeu 57? " + l.remove(57));
+        System.out.println("Removeu 50? " + l.remove(50));
+        System.out.println("Removeu 57? " + l.remove(57));
 
         System.out.println(l);
 

@@ -130,7 +130,84 @@ public class DoubleLinkedListOfInteger {
 
         return oldElement;
     }
-    //remove a primeira ocorrência do elemento e dalista
+    //remove a primeira ocorrência do elemento e da lista
+    public boolean remove(int e) {
+        int i = 0;
+        Node aux;
+        aux = header.next;
+        while(i < count) {
+            if(aux.element.equals(e)) {
+                aux.prev.next = aux.next;
+                aux.next.prev = aux.prev;
+                aux = null;
+                count--;
+                return true;
+            }
+            aux = aux.next;
+            i++;
+        }
+        return false;
+    }
+    //• removeByIndex (index)*: remove o elemento da posição index
+    public boolean removeByIndex(int index) {
+        int i = 0;
+        Node aux;
+        aux = header.next;
+        while(i < count) {
+            if(i == index) {
+                aux.prev.next = aux.next;
+                aux.next.prev = aux.prev;
+                count--;
+                return true;
+            }
+            aux = aux.next;
+            i++;
+        }
+        return false;
+    }
+
+    public boolean contains(int e) {
+        int i = 0;
+        Node aux;
+        aux = header.next;
+        while(i <= count) {
+            if(aux.element.equals(e)){
+                return true;
+            }
+            i++;
+            aux = aux.next;
+        }
+        return false;
+    }
+
+    public int indexOf(int e) {
+        int i = 0;
+        Node aux;
+        aux = header.next;
+        while(i <= count) {
+            if(aux.element.equals(e)){
+                return i;
+            }
+            aux = aux.next;
+            i++;
+        }
+        return -1;
+    }
+    //que retorna um arranjo com os elementos da lista original entre fromIndex (inclusivo) e toIndex (exclusivo).
+    public int subList(int fromIndex, int toIndex) {
+
+    }
+    //que inverte o conteúdo da lista.
+    public void reverse() {
+
+    }
+    //que conta o número de ocorrências do elemento passado como parâmetro na lista, retornando este valor.
+    public int contaOcorrencias(int element) {
+
+    }
+
+
+
 
     @Override
     public String toString()
