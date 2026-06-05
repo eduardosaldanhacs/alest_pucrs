@@ -194,17 +194,42 @@ public class DoubleLinkedListOfInteger {
         return -1;
     }
     //que retorna um arranjo com os elementos da lista original entre fromIndex (inclusivo) e toIndex (exclusivo).
-    public int subList(int fromIndex, int toIndex) {
-
+    public int[] subList(int fromIndex, int toIndex) {
+        int i = 0;
+        Node aux;
+        aux = header.next;
+        if(fromIndex < 0 || toIndex > count) {
+            throw new IndexOutOfBoundsException();
+        }
+        int[] elementsOfList = new int[toIndex - fromIndex];
+        while(i < fromIndex) {
+            aux = aux.next;
+            i++;
+        }
+        i = 0;
+        while(i <= toIndex) {
+            elementsOfList[i] = aux.element;
+            aux = aux.next;
+            i++;
+        } return elementsOfList;
     }
     //que inverte o conteúdo da lista.
     public void reverse() {
-
+        Node aux = trailer.prev;
+        int i = 0;
+        while(i < count) {
+            header.next = aux;
+            aux = aux.prev;
+            aux.next = trailer.prev;
+            i++;
+        }
+        //1 2 3 4
+        //4
     }
     //que conta o número de ocorrências do elemento passado como parâmetro na lista, retornando este valor.
-    public int contaOcorrencias(int element) {
-
-    }
+//    public int contaOcorrencias(int element) {
+//
+//    }
 
 
 
